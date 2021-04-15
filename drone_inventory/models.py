@@ -69,7 +69,7 @@ class Drone(db.Model):
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
     def __init__(self, name, description, price, camera_quality, flight_time, max_speed, dimensions, weight, cost_of_prod, series, user_token, id = ''):
-        id = self.set_id()
+        self.id = self.set_id()
         self.name = name
         self.description = description
         self.price = price
